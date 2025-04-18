@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../output/">
+      
+      
+        <link rel="next" href="../pip/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>conda-lock scipy 2023 virtual poster - conda-lock</title>
+        <title>pixi - conda-lock</title>
       
     
     
@@ -58,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#conda-lock-scipy-2023-virtual-poster" class="md-skip">
+        <a href="#pixi-migration-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              conda-lock scipy 2023 virtual poster
+              pixi
             
           </span>
         </div>
@@ -379,8 +383,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -392,13 +398,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -414,7 +418,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Output Formats
@@ -448,10 +452,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../pixi-migration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    pixi
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -462,6 +488,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-steps-to-get-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      The steps to get started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-default-feature-and-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      The default feature and environment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Actions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributions-welcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributions welcome
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -691,101 +836,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#abstract" class="md-nav__link">
+  <a href="#quick-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Abstract
+      Quick example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-conda" class="md-nav__link">
+  <a href="#the-steps-to-get-started" class="md-nav__link">
     <span class="md-ellipsis">
-      Why conda?
+      The steps to get started
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-conda-lock" class="md-nav__link">
+  <a href="#concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      Why conda-lock?
+      Concepts
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Design principles
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Design principles">
+    <nav class="md-nav" aria-label="Concepts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-the-environment-created-by-conda-lock-should-be-consistent-across-all-machines-on-a-given-platform" class="md-nav__link">
+  <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
-      1. The environment created by conda lock should be consistent across all machines on a given platform
+      Features
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-conda-lock-should-be-adaptible-to-support-alternate-conda-frontends-provided-they-adhere-to-the-same-cli-patterns-as-conda" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Conda-lock should be adaptible to support alternate conda frontends provided they adhere to the same cli patterns as conda
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-at-installation-time-conda-lock-should-not-be-needed-installing-a-locked-set-of-dependencies-should-not-invoke-the-conda-solver-as-that-would-make-the-environment-created-no-longer-reproducible" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. At installation time conda-lock should not be needed. Installing a locked set of dependencies should not invoke the conda solver as that would make the environment created no longer reproducible
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-conda-lock-should-be-able-to-solve-for-non-native-platforms" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. conda-lock should be able to solve for non-native platforms
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-subprocessing-and-code-vending" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Subprocessing and code-vending
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-meeting-users-where-they-are" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Meeting users where they are
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Meeting users where they are">
+    <nav class="md-nav" aria-label="Features">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pip-conda-forge-crosswalk" class="md-nav__link">
+  <a href="#the-default-feature-and-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      pip &lt;-&gt; conda-forge crosswalk
+      The default feature and environment
     </span>
   </a>
   
@@ -802,37 +893,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-usage-patterns-observed" class="md-nav__link">
+  <a href="#infrastructure" class="md-nav__link">
     <span class="md-ellipsis">
-      Common usage patterns observed
+      Infrastructure
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Common usage patterns observed">
+    <nav class="md-nav" aria-label="Infrastructure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#human-refreshes" class="md-nav__link">
+  <a href="#github-actions" class="md-nav__link">
     <span class="md-ellipsis">
-      Human refreshes
+      GitHub Actions
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#consistent-citest-environments" class="md-nav__link">
+  <a href="#docker" class="md-nav__link">
     <span class="md-ellipsis">
-      Consistent CI/test environments
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#container-building" class="md-nav__link">
-    <span class="md-ellipsis">
-      Container building
+      Docker
     </span>
   </a>
   
@@ -840,6 +922,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributions-welcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributions welcome
+    </span>
+  </a>
   
 </li>
       
@@ -862,74 +953,157 @@
   
 
 
-<h1 id="conda-lock-scipy-2023-virtual-poster">conda-lock scipy 2023 virtual poster</h1>
-<h2 id="abstract">Abstract</h2>
-<p><a href="https://conda.github.io/conda-lock"><code>conda-lock</code></a> is a tool to designed to aid reproducible science and analysis by providing a reliable and easy to use means to ensure consistent creation of computing environments.</p>
-<p>This is not a document on how to use <code>conda-lock</code>, for that consult the <a href="https://conda.github.io/conda-lock/">documentation</a>.</p>
-<p>This document covers the design consideration as well as common usage patterns.</p>
-<h2 id="why-conda">Why conda?</h2>
-<p>A large number of commonly used libraries in python make entensive use of extension modules written in a different language (usually C/C++).  Building these libraries has historically been challenging since the python package management tools (like pip) cannot be used to the  dependencies that are needed by native compilers.</p>
-<p>Conda solves this by building <em>both</em> the native libraries and the python libraries that make use of these.  It performs a few adjustments to the compiled artifacts to ensure that the built binaries can be more easily intalled without needing to recompile.</p>
-<h2 id="why-conda-lock">Why conda-lock?</h2>
-<p>Conda was designed as a developer facing tool, much like its more pure python sibling <code>pip</code>.  This means that when trying to use <code>conda</code> in cases where reproducibility is required it has a number of short-comings that can appear from time to time which can result in inconsistent execution environments.</p>
-<p>conda-lock addresses these shortcomings by leaning on existing package management tools (conda, mamba and poetry) and the concept of a dependency lockfile (popularized by systems like npm and cargo) and allowing users to generate a lockfile that covers both conda and PyPI packages.</p>
-<h2 id="design-principles">Design principles</h2>
-<h3 id="1-the-environment-created-by-conda-lock-should-be-consistent-across-all-machines-on-a-given-platform">1. The environment created by conda lock should be consistent across all machines on a given platform</h3>
-<p>Conda packages are platform-specific binaries we cannot guarantee any resolution more general than platform level.</p>
-<h3 id="2-conda-lock-should-be-adaptible-to-support-alternate-conda-frontends-provided-they-adhere-to-the-same-cli-patterns-as-conda">2. Conda-lock should be adaptible to support alternate conda frontends provided they adhere to the same cli patterns as conda</h3>
-<p>Since conda-lock relies on subprocess based execution, the library does not need to be altered to support additional conda solvers, provided that they implement a sufficiently compatible comnmand line interface</p>
-<h3 id="3-at-installation-time-conda-lock-should-not-be-needed-installing-a-locked-set-of-dependencies-should-not-invoke-the-conda-solver-as-that-would-make-the-environment-created-no-longer-reproducible">3. At installation time conda-lock should not be needed.  Installing a locked set of dependencies should not invoke the conda solver as that would make the environment created no longer reproducible</h3>
-<p>Conda-lock makes use of some lesser-known features of conda to provide an explicit installation file that can be consumed by conda to perform a solve-less installation</p>
-<p>Additionally mamba, micromamba support the conda-lock format natively and can create an environment from that directly.</p>
-<h3 id="4-conda-lock-should-be-able-to-solve-for-non-native-platforms">4. conda-lock should be able to solve for non-native platforms</h3>
-<p>Developers of software are frequently running different operating systems than those used by production systems.</p>
-<p>Since the lockfile generated by conda-lock is merely a set of packages to install (and its installation order), conda-lock forces the conda frontend and poetry to perform the dependency resolution as if it were running on that foreign platform.</p>
-<p>Whilst this does not guarantee that the versions of dependencies resolved for all platforms are identical, by being able to perform the package reolution at the same time for all target platforms it drastically increases the chances of a mostly compatible set of packages.</p>
-<h3 id="5-subprocessing-and-code-vending">5. Subprocessing and code-vending</h3>
-<p>Both conda and mamba's user-facing interface takes the form of a command line-based application.  This interface has remained consistent and stable thoughout most of conda's existance.  This interface stability allows tools like conda-like to reliably invoke conda/mamba as a subprocess instead of needing to be subject to breaking changes when making use of internal apis not meant for end users.</p>
-<p>For resolving python packages from PyPI conda-lock includes the entirely of poetry as a subpackage.  Neither poetry nor pip provided a stable developer api at the time that the library was developed.</p>
-<h3 id="6-meeting-users-where-they-are">6. Meeting users where they are</h3>
-<p>In addition to supporting the standard <code>environment.yaml</code> format for conda environment specifications, conda-lock also supports the use of <code>pyproject.toml</code> files as these are commonly used to define environments for python software projects.</p>
-<p>By allowing for this single-source way of defining the library dependencies, the tool reduces the effort required to maintain both conda and pyi dependency sets for a given project.</p>
-<p>conda-lock achieves this by leveraging the scale of conda-forge - pip crosswalk that is automatically maintained by conda-forge.</p>
-<h4 id="pip-conda-forge-crosswalk">pip &lt;-&gt; conda-forge crosswalk</h4>
-<p>Since conda and pypi packages live in difference namespaces the same name cannot be guaranteed to point to the same package for conda and pypi.  This naming problem is very common across packaging ecosystems.</p>
-<p>Conda-forge uses a graph dependency based heuristic for determining which conda packages correspond to the particular pypi package.  This graph based hueristic does have access to the conda package recipe.</p>
-<p>Selection heuristics.</p>
-<ol>
-<li>If a package has been <a href="https://github.com/regro/cf-scripts/blob/master/conda_forge_tick/pypi_name_mapping_static.yaml">manually mapped</a> prefer that over all other heuristics.</li>
-<li>The package recipe must contain "source" that points to a PyPI source destination.  This allows us to match conda package names to PyPI package names.</li>
-<li>The package recipe must contain a "import" test section that perform the python import associated with this package.  This gives us an additional vote that the package is indeed a python package.</li>
-<li>Since many packages can declare the same "import" section we make use of graph measure (the HITS algorithm) that prefers packages that have fewer ancestors and more successors.  This ensures that we correctly resolve the python import <code>numpy</code> as the package <code>numpy</code> instead of <code>jax</code> which provides an alternate implementation of the numpy api.</li>
-<li>Once an import name determined to belong to (conda, pypi) pair it cannot be resolved to another package.  This ensures that nammespaced packages that declare a common base import are handled correctly.</li>
-<li>If a package is not present in the crosswalk assume that the conda and pypi names are the same.</li>
-</ol>
-<p>Whilst this set of metrics is admittedly fairly arbitrary it does exhibit enough desirable characteristics to work for a large number of environments.</p>
-<p>For details on the implementation see the <a href="https://github.com/regro/cf-scripts/blob/master/conda_forge_tick/pypi_name_mapping.py">code</a>.</p>
-<h2 id="common-usage-patterns-observed">Common usage patterns observed</h2>
-<p>conda-lock has beern observed to have a couple of common usage patterns across open source ecosystems.</p>
-<h3 id="human-refreshes">Human refreshes</h3>
-<p>The initial designed use case for conda-lock was to provision a number of exactly reproducible conda environments across a large fleet of worker machines.  These environments would share a lot of dependencies which mneant that the usage of alternate tools like conda-constructor would impose too much of a disk-usage cost to be feasible (conda by default installs files by making hard-links minimizing the disk usage needed to provision a large number of environments when they share some dependencies.)</p>
-<p>These environments are generally only updated whenever there is a need to do so.</p>
-<h3 id="consistent-citest-environments">Consistent CI/test environments</h3>
-<p>For some continuous integration workflows conda-lock can be used as a means of generating consistent environment definitions used later on in the workflow.</p>
-<p>These systems gnerally generate a lock file dynamically whenever the workflow is invoked.  When the resulting lockfile changes this change is either committed back to the repository or propageted to downstream jobs as an artifact.</p>
-<p>This approach allows projects with larger continous integration processes to have a consistently reproducible test/execution environment that can be used by both developers and CI systems.</p>
-<p>This approach is used by <a href="https://ibis-project.org/">ibis</a>.</p>
-<h3 id="container-building">Container building</h3>
-<p>Whilst conda lock does not directly provide a way to build docker/oci containers, it is commonly used to help aid this task.</p>
-<p>This is generally done by performing the following steps.</p>
+<h1 id="pixi-migration-guide">pixi migration guide</h1>
+<p>So you want to try pixi, the new project-centric Conda environment manager?
+We will walk you through the steps to get started, whether or not you are a conda-lock user.</p>
+<p>Perhaps "migration" is the wrong word, because pixi is an option, not a replacement.
+It will not override existing workflows.
+Removing pixi from your project is as simple as deleting the files indicated in step 2 below.</p>
+<h2 id="quick-example">Quick example</h2>
+<p>Use conda-lock and pixi to make a development environment for mypy.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install/upgrade conda-lock</span>
+pipx<span class="w"> </span>upgrade<span class="w"> </span>conda-lock<span class="w"> </span><span class="o">||</span><span class="w"> </span>pipx<span class="w"> </span>install<span class="w"> </span>--force<span class="w"> </span><span class="s2">&quot;conda-lock&gt;=3&quot;</span>
+<span class="nb">cd</span><span class="w"> </span>/tmp
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/python/mypy
+<span class="nb">cd</span><span class="w"> </span>mypy
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>add-pixi
+<span class="nb">echo</span><span class="w"> </span>.pixi<span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore
+conda-lock<span class="w"> </span>render-lock-spec<span class="w"> </span>--kind<span class="o">=</span>pixi.toml<span class="w"> </span>--stdout<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--file<span class="o">=</span>pyproject.toml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--channel<span class="o">=</span>conda-forge<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--pixi-project-name<span class="o">=</span>mypy<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--editable<span class="w"> </span><span class="nv">mypy</span><span class="o">=</span>.<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>&gt;<span class="w"> </span>pixi.toml
+
+<span class="c1"># Solve the environment</span>
+pixi<span class="w"> </span>update
+<span class="c1"># Activate the environment</span>
+pixi<span class="w"> </span>shell
+mypy<span class="w"> </span>--version
+
+<span class="c1"># Commit the changes</span>
+git<span class="w"> </span>add<span class="w"> </span>.gitignore
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Ignore pixi cache directory&quot;</span>
+git<span class="w"> </span>add<span class="w"> </span>pixi.toml
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add pixi.toml configuration&quot;</span>
+git<span class="w"> </span>add<span class="w"> </span>pixi.lock
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add pixi.lock lock file&quot;</span>
+</code></pre></div>
+<h2 id="the-steps-to-get-started">The steps to get started</h2>
 <ol>
 <li>
-<p>Outside the dockerfile</p>
-<p>a. Generate the lockfile (outside of the Dockerfile)</p>
-<p>b. Render the lockfile to a platform specifc explicit lock
-2. Inside the dockerfile</p>
-<p>a. <code>COPY</code> the lockfile generated into the container</p>
-<p>b. Install a conda environmenbt from the explicit lock</p>
+<p>Visit <a href="https://pixi.sh">https://pixi.sh</a> and install pixi if you haven't already.
+    You can also find information about IDE integrations and other documentation.
+    <em>Note</em>: As of writing, VS Code's Python extension has native support for pixi.</p>
+</li>
+<li>
+<p>Prepare for the new files and directories related to pixi.</p>
+<ul>
+<li>
+<p><code>pixi.toml</code> defines the environment specifications and config options. We will generate this with <code>conda-lock</code>.</p>
+</li>
+<li>
+<p><code>pixi.lock</code> is managed by pixi and maintains a particular solution to the environment specifications from <code>pixi.toml</code>.</p>
+</li>
+<li>
+<p><code>.pixi/</code> is the environment cache directory where the environments from the lock file <code>pixi.lock</code> are installed and updated.
+    Pixi will recreate this directory if it is deleted.</p>
+</li>
+</ul>
+<p>Both <code>pixi.toml</code> and <code>pixi.lock</code> should be version controlled. The <code>.pixi/</code> directory should be ignored by <code>.gitignore</code>, <code>.dockerignore</code>, and/or similar.</p>
+<p><em>Note</em>: For Python projects it is possible to use <code>pyproject.toml</code> instead of <code>pixi.toml</code>.
+For starters we recommend sticking with <code>pixi.toml</code> since as of writing there is very little advantage to using <code>pyproject.toml</code>.
+Using separate files also provides more clear separation between Python project dependency management (<code>pyproject.toml</code>) and environment management (<code>pixi.toml</code>). Besides, migrating to <code>pyproject.toml</code> is mostly a matter of prefixing the table names in <code>pixi.toml</code> with <code>tool.pixi.</code>.</p>
+</li>
+<li>
+<p>Install the latest version of <code>conda-lock</code> if you don't already have it.</p>
+<div class="highlight"><pre><span></span><code>pipx<span class="w"> </span>install<span class="w"> </span>--force<span class="w"> </span><span class="s2">&quot;conda-lock&gt;=3&quot;</span>
+</code></pre></div>
+<p>or</p>
+<div class="highlight"><pre><span></span><code>pipx<span class="w"> </span>upgrade<span class="w"> </span>conda-lock
+</code></pre></div>
+</li>
+<li>
+<p>Generate a <code>pixi.toml</code> file with <code>conda-lock</code>.</p>
+<div class="highlight"><pre><span></span><code>conda-lock<span class="w"> </span>render-lock-spec<span class="w"> </span>--kind<span class="o">=</span>pixi.toml<span class="w"> </span>--stdout<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--file<span class="o">=</span>source-file-1<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--file<span class="o">=</span>source-file-2<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>...
+<span class="w">    </span>--pixi-project-name<span class="o">=</span>my-project-name
+</code></pre></div>
+<p>Each <code>--file</code> argument should include a path to some <code>environment.yml</code> or <code>pyproject.toml</code>.</p>
+<p>The <code>--pixi-project-name</code> allows you to specify the name of the project.</p>
+<p>For Python development, you can optionally include one or more <code>--editable python-project-name=relative-path</code> arguments to specify local packages. For example,</p>
+<div class="highlight"><pre><span></span><code>--editable<span class="w"> </span>python-package<span class="o">=</span>.
+</code></pre></div>
+<p>works like <code>pip install -e .</code>. (More generally, <code>.</code> can be replaced with the relative path to a Python project root containing a <code>pyproject.toml</code> or <code>setup.py</code> file.)</p>
+<p>For example for <code>conda-lock</code> we use the following command to generate our <code>pixi.toml</code> file:</p>
+<div class="highlight"><pre><span></span><code>conda-lock<span class="w"> </span>render-lock-spec<span class="w"> </span>--kind<span class="o">=</span>pixi.toml<span class="w"> </span>--stdout<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--file<span class="o">=</span>environments/dev-environment.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--file<span class="o">=</span>pyproject.toml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--pixi-project-name<span class="o">=</span>conda-lock<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--editable<span class="w"> </span>conda-lock<span class="o">=</span>.
+</code></pre></div>
+<p>When you are satisfied with the output, append <code>&gt; pixi.toml</code> to the command to save it to a file.</p>
+<p>Pay attention to any warnings that <code>conda-lock</code> may print. Some specifications may not be translatable, and others might not yet be implemented.</p>
+<p>By default, dependencies from <code>pyproject.toml</code> will be converted to conda-forge dependencies. If you wish to keep them as PyPI dependencies, you can add the following table to the <code>pyproject.toml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.conda-lock]</span>
+<span class="n">default-non-conda-source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pip&quot;</span>
+</code></pre></div>
+<p>If you have a <code>test-dependencies.yml</code> file and want it to define a feature named <code>test</code>, then you should add</p>
+<div class="highlight"><pre><span></span><code><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+</code></pre></div>
+<p>to the top level of <code>test-dependencies.yml</code>.</p>
+</li>
+<li>
+<p>(Optional) Generate a <code>pixi.lock</code> file with pixi.</p>
+<div class="highlight"><pre><span></span><code>pixi<span class="w"> </span>update
+</code></pre></div>
+<p>This step is optional because pixi will automatically generate a lock file as needed from the other commands.
+By running <code>pixi update</code> we are doing one step at a time.</p>
+</li>
+<li>
+<p>(Optional) Install the environment from the lock file.</p>
+<div class="highlight"><pre><span></span><code>pixi<span class="w"> </span>install
+</code></pre></div>
+<p>Optional because pixi automatically installs environments as needed.</p>
+</li>
+<li>
+<p>Start an activated shell to test the environment.</p>
+<div class="highlight"><pre><span></span><code>pixi<span class="w"> </span>shell
+</code></pre></div>
+<p>This command replaces <code>conda activate</code>. However, it uses a subshell instead of the current shell, so instead of <code>conda deactivate</code> you use <code>exit</code>.</p>
+</li>
+<li>
+<p>Commit <code>pixi.toml</code> and <code>pixi.lock</code> to your version control system.</p>
 </li>
 </ol>
-<p>For exact details see the excellent <a href="https://uwekorn.com/2021/03/01/deploying-conda-environments-in-docker-how-to-do-it-right.html">article</a> by Uwe Korn.</p>
+<h2 id="concepts">Concepts</h2>
+<h3 id="features">Features</h3>
+<p>Conda-lock has a concept called "categories" for grouping dependencies.
+Each dependency belongs to one or more categories.
+When conda-lock generates a lock file, it solves for an environment containing all categories and determines which dependencies are needed for each category.
+An environment can be created by seleting some subset of categories, and only the necessary dependencies will be installed.</p>
+<p>Pixi has a similar but more clever concept called "features".
+Unlike categories, features are groups of dependency specifications that need not be mutually compatible.
+Named environments are specified by selecting some mutually compatible features.
+Then each named environment is solved for independently.</p>
+<p>There is also a default environment, and it can be overridden.
+For convenience, we override the default environment to include all categories.</p>
+<h4 id="the-default-feature-and-environment">The default feature and environment</h4>
+<p>Dependencies specified under <code>[dependencies]</code> or <code>[pypi-dependencies]</code> are grouped into the default feature.
+All environments implicitly include the default feature.</p>
+<p>In contrast, the <code>default</code> environment is simply the environment that is used when no environment is specified.
+Unless otherwise specified, the <code>default</code> environment includes only the default feature.
+But in practice, one often wants to default to a "batteries-included" environment.</p>
+<h2 id="infrastructure">Infrastructure</h2>
+<h3 id="github-actions">GitHub Actions</h3>
+<p>If you used <a href="https://github.com/mamba-org/setup-micromamba">setup-micromamba</a>, <a href="https://github.com/conda-incubator/setup-miniconda">setup-miniconda</a> or similar, then for pixi you can use <a href="https://pixi.sh/latest/advanced/github_actions/">setup-pixi</a>.</p>
+<p>For periodically updating the lock file, you can use <a href="https://pixi.sh/latest/advanced/updates_github_actions/">pixi-diff-to-markdown</a>.</p>
+<h3 id="docker">Docker</h3>
+<p>See <a href="https://github.com/prefix-dev/pixi-docker">pixi-docker</a>.</p>
+<h2 id="contributions-welcome">Contributions welcome</h2>
+<p>We would be delighted to receive PRs to improve and extend both this guide and <code>conda-lock render-lock-spec</code>.</p>
 
 
 
