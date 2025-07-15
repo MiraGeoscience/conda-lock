@@ -4,13 +4,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "conda_lock"
+version = "0.0.0"  #to pass poetry check 
 description = "Lockfiles for conda"
 authors = [
     { name = "Marius van Niekerk", email = "marius.v.niekerk@gmail.com" },
 ]
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.9"
+requires-python = ">=3.9,<4.0"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Science/Research",
