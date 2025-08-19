@@ -187,7 +187,7 @@ def parse_poetry_pyproject_toml(
     Each dependency is assigned a category depending on which section it appears in:
     * dependencies in [tool.poetry.dependencies] have category main
     * dependencies in [tool.poetry.dev-dependencies] have category dev
-    * dependencies in each `key` of [tool.poetry.extras] have category `key`
+    * dependencies in each `key` of [project.optional-dependencies] (or [tool.poetry.extras]) have category `key`
     * dependencies in [tool.poetry.{group}.dependencies] have category `group`
 
     * By default, dependency names are translated to the conda equivalent, with three exceptions:
@@ -206,7 +206,15 @@ def parse_poetry_pyproject_toml(
     }
 
     dep_to_extra = {}
-    for cat, deps in get_in(["tool", "poetry", "extras"], contents, {}).items():
+
+    extras_section = get_in(
+        ["project", "optional-dependencies"],
+        contents,
+        # else check tool.poetry.extras (deprecated with Poetry v2)
+        get_in(["tool", "poetry", "extras"], contents, {}),
+    )
+
+    for cat, deps in extras_section.items():
         for dep in deps:
             dep_to_extra[dep] = cat
 
