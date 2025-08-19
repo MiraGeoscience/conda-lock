@@ -5,17 +5,9 @@ import pathlib
 import sys
 import warnings
 
+from collections.abc import Mapping, Sequence, Set
 from functools import partial
-from typing import (
-    AbstractSet,
-    Any,
-    Dict,
-    List,
-    Mapping,
-    Optional,
-    Sequence,
-    Tuple,
-)
+from typing import Any, Optional
 from urllib.parse import urldefrag
 
 
@@ -185,7 +177,7 @@ def handle_mapping(
 
 def parse_poetry_pyproject_toml(
     path: pathlib.Path,
-    platforms: List[str],
+    platforms: list[str],
     contents: Mapping[str, Any],
     mapping_url: str,
 ) -> LockSpecification:
@@ -195,7 +187,7 @@ def parse_poetry_pyproject_toml(
     Each dependency is assigned a category depending on which section it appears in:
     * dependencies in [tool.poetry.dependencies] have category main
     * dependencies in [tool.poetry.dev-dependencies] have category dev
-    * dependencies in each `key` of [tool.poetry.extras] have category `key`
+    * dependencies in each `key` of [project.optional-dependencies] (or [tool.poetry.extras]) have category `key`
     * dependencies in [tool.poetry.{group}.dependencies] have category `group`
 
     * By default, dependency names are translated to the conda equivalent, with three exceptions:
@@ -206,15 +198,23 @@ def parse_poetry_pyproject_toml(
     * markers are not supported
 
     """
-    dependencies: List[Dependency] = []
+    dependencies: list[Dependency] = []
 
-    categories: Dict[Tuple[str, ...], str] = {
+    categories: dict[tuple[str, ...], str] = {
         ("dependencies",): "main",
         ("dev-dependencies",): "dev",
     }
 
     dep_to_extra = {}
-    for cat, deps in get_in(["tool", "poetry", "extras"], contents, {}).items():
+
+    extras_section = get_in(
+        ["project", "optional-dependencies"],
+        contents,
+        # else check tool.poetry.extras (deprecated with Poetry v2)
+        get_in(["tool", "poetry", "extras"], contents, {}),
+    )
+
+    for cat, deps in extras_section.items():
         for dep in deps:
             dep_to_extra[dep] = cat
 
@@ -236,7 +236,7 @@ def parse_poetry_pyproject_toml(
             category: str = dep_to_extra.get(depname) or default_category
             manager: Literal["conda", "pip"] = default_non_conda_source
             url = None
-            extras: List[Any] = []
+            extras: list[Any] = []
             in_extra: bool = False
             markers: Optional[str] = None
 
@@ -364,9 +364,9 @@ def parse_poetry_pyproject_toml(
 
 def specification_with_dependencies(
     path: pathlib.Path,
-    platforms: List[str],
+    platforms: list[str],
     toml_contents: Mapping[str, Any],
-    dependencies: List[Dependency],
+    dependencies: list[Dependency],
 ) -> LockSpecification:
     force_pypi = set()
     for depname, depattrs in get_in(
@@ -398,7 +398,7 @@ def specification_with_dependencies(
         ["tool", "conda-lock", "pip-repositories"], toml_contents, []
     )
 
-    platform_specific_dependencies: Dict[str, List[Dependency]] = {}
+    platform_specific_dependencies: dict[str, list[Dependency]] = {}
     for platform in platforms:
         platform_specific_dependencies[platform] = [
             d for d in dependencies if evaluate_marker(d.markers, platform)
@@ -458,7 +458,7 @@ def parse_requirement_specifier(
         return RequirementWithHash(requirement)
 
 
-def unpack_git_url(url: str) -> Tuple[str, Optional[str], Optional[str]]:
+def unpack_git_url(url: str) -> tuple[str, Optional[str], Optional[str]]:
     if url.endswith(".git"):
         url = url[:-4]
     if url.startswith("git+"):
@@ -646,18 +646,18 @@ def parse_python_requirement(
 def parse_requirements_pyproject_toml(
     pyproject_toml_path: pathlib.Path,
     *,
-    platforms: List[str],
+    platforms: list[str],
     contents: Mapping[str, Any],
     prefix: Sequence[str],
     main_tag: str,
     optional_tag: str,
     mapping_url: str,
-    dev_tags: AbstractSet[str] = {"dev", "test"},
+    dev_tags: Set[str] = {"dev", "test"},
 ) -> LockSpecification:
     """
     PEP621 and flit
     """
-    dependencies: List[Dependency] = []
+    dependencies: list[Dependency] = []
 
     sections = {(*prefix, main_tag): "main"}
     for extra in dev_tags:
@@ -690,7 +690,7 @@ def parse_requirements_pyproject_toml(
 
 def parse_pdm_pyproject_toml(
     path: pathlib.Path,
-    platforms: List[str],
+    platforms: list[str],
     contents: Mapping[str, Any],
     mapping_url: str,
 ) -> LockSpecification:
@@ -735,7 +735,7 @@ def parse_pdm_pyproject_toml(
 
 def parse_platforms_from_pyproject_toml(
     pyproject_toml: pathlib.Path,
-) -> List[str]:
+) -> list[str]:
     with pyproject_toml.open("rb") as fp:
         contents = toml_load(fp)
     return get_in(["tool", "conda-lock", "platforms"], contents, [])
@@ -744,7 +744,7 @@ def parse_platforms_from_pyproject_toml(
 def parse_pyproject_toml(
     pyproject_toml: pathlib.Path,
     *,
-    platforms: List[str],
+    platforms: list[str],
     mapping_url: str,
 ) -> LockSpecification:
     with pyproject_toml.open("rb") as fp:
@@ -756,7 +756,7 @@ def parse_pyproject_toml(
         contents,
         False,
     ):
-        dependencies: List[Dependency] = []
+        dependencies: list[Dependency] = []
         return specification_with_dependencies(
             pyproject_toml, platforms, contents, dependencies
         )
