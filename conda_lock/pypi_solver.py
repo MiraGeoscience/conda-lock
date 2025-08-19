@@ -5,7 +5,7 @@ import sys
 import warnings
 
 from collections.abc import Iterator
-from contextlib import contextmanager
+from contextlib import contextmanager, nullcontext
 from pathlib import Path
 from posixpath import expandvars
 from typing import (
@@ -617,8 +617,11 @@ def solve_pypi(
     )
     # find platform-specific solution (e.g. dependencies conditioned on markers)
     with s.use_environment(env):
-        assert _vcs_checkout_root is not None
-        with s.provider.use_source_root(_vcs_checkout_root):
+        with (
+            s.provider.use_source_root(_vcs_checkout_root)
+            if _vcs_checkout_root
+            else nullcontext()
+        ):
             result = s.solve(use_latest=to_update)
 
     requirements = get_requirements(
