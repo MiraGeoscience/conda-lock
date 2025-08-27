@@ -441,6 +441,10 @@ class PackageInfo:
 
         return None
 
+    @staticmethod
+    def _is_version_dynamic(path: Path) -> bool:
+        return PyProjectTOML(path.joinpath("pyproject.toml")).is_version_dynamic()
+
     @classmethod
     def from_directory(cls, path: Path) -> PackageInfo:
         """
@@ -452,7 +456,8 @@ class PackageInfo:
         """
         project_package = cls._get_poetry_package(path)
         info: PackageInfo | None
-        if project_package:
+
+        if project_package and not cls._is_version_dynamic(path):
             info = cls.from_package(project_package)
         else:
             info = cls.from_metadata_directory(path)

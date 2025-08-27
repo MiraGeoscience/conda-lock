@@ -79,6 +79,12 @@ class PyProjectTOML:
                 f"[tool.poetry] section not found in {self._path.as_posix()}"
             ) from e
 
+    def is_version_dynamic(self) -> bool:
+        if self.path.exists():
+            with suppress(KeyError):
+                return "version" in self.data["project"]["dynamic"]
+        return False
+
     def is_poetry_project(self) -> bool:
         from conda_lock._vendor.poetry.core.pyproject.exceptions import PyProjectError
 
